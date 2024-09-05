@@ -1,4 +1,4 @@
-import md5 from "js-md5";
+// import md5 from "js-md5";
 import { useState } from "react";
 import { Button, Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +22,7 @@ const LoginForm = (props: any) => {
 	const onFinish = async (loginForm: Login.ReqLoginForm) => {
 		try {
 			setLoading(true);
-			loginForm.password = md5(loginForm.password);
+			// loginForm.password = md5(loginForm.password);
 			const { data } = await loginApi(loginForm);
 			setToken(data?.access_token);
 			setTabsList([]);
@@ -49,10 +49,10 @@ const LoginForm = (props: any) => {
 			autoComplete="off"
 		>
 			<Form.Item name="username" rules={[{ required: true, message: "请输入用户名" }]}>
-				<Input placeholder="用户名：admin / user" prefix={<UserOutlined />} />
+				<Input placeholder="用户名/UserName" prefix={<UserOutlined />} />
 			</Form.Item>
 			<Form.Item name="password" rules={[{ required: true, message: "请输入密码" }]}>
-				<Input.Password autoComplete="new-password" placeholder="密码：123456" prefix={<LockOutlined />} />
+				<Input.Password autoComplete="new-password" placeholder="密码/Password" prefix={<LockOutlined />} />
 			</Form.Item>
 			<Form.Item className="login-btn">
 				<Button

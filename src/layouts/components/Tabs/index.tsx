@@ -1,4 +1,4 @@
-import { Tabs, message } from "antd";
+import { Tabs } from "antd";
 import { HomeFilled } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -15,9 +15,9 @@ const LayoutTabs = (props: any) => {
 	const { themeConfig } = props.global;
 	const { setTabsList } = props;
 	const { TabPane } = Tabs;
-	const { pathname } = useLocation();
+	const { pathname } = useLocation(); //当前位置描述
 	const navigate = useNavigate();
-	const [activeValue, setActiveValue] = useState<string>(pathname);
+	const [activeValue, setActiveValue] = useState<string>(pathname); //路径描述
 
 	useEffect(() => {
 		addTabs();
@@ -50,13 +50,13 @@ const LayoutTabs = (props: any) => {
 				navigate(nextTab.path);
 			});
 		}
-		message.success("你删除了Tabs标签 😆😆😆");
+		// message.success("你删除了Tabs标签 😆😆😆");
 		setTabsList(tabsList.filter((item: Menu.MenuOptions) => item.path !== tabPath));
 	};
 
 	return (
 		<>
-			{!themeConfig.tabs && (
+			{themeConfig.tabs && (
 				<div className="tabs">
 					<Tabs
 						animated

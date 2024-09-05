@@ -3,6 +3,7 @@ import { GlobalState } from "@/redux/interface";
 import produce from "immer";
 import * as types from "@/redux/mutation-types";
 
+//以下配置,除了暗黑模式是正相关对应,其他都是反过来的
 const globalState: GlobalState = {
 	token: "",
 	userInfo: "",
@@ -12,7 +13,7 @@ const globalState: GlobalState = {
 		// 默认 primary 主题颜色
 		primary: "#1890ff",
 		// 深色模式
-		isDark: false,
+		isDark: true,
 		// 色弱模式(weak) || 灰色模式(gray)
 		weakOrGray: "",
 		// 面包屑导航

@@ -7,6 +7,7 @@ import "./index.less";
 const UseHooks = () => {
 	// 按钮权限
 	const { BUTTONS } = useAuthButtons();
+	console.log(BUTTONS);
 	const { RangePicker } = DatePicker;
 
 	useEffect(() => {

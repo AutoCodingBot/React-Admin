@@ -84,27 +84,27 @@ const Theme = (props: any) => {
 				<div className="theme-item">
 					<span>面包屑导航</span>
 					<Switch
-						checked={!breadcrumb}
+						checked={breadcrumb}
 						onChange={e => {
-							onChange(e, "breadcrumb");
+							onChange(!e, "breadcrumb");
 						}}
 					/>
 				</div>
 				<div className="theme-item">
 					<span>标签栏</span>
 					<Switch
-						checked={!tabs}
+						checked={tabs}
 						onChange={e => {
-							onChange(e, "tabs");
+							onChange(!e, "tabs");
 						}}
 					/>
 				</div>
 				<div className="theme-item">
 					<span>页脚</span>
 					<Switch
-						checked={!footer}
+						checked={footer}
 						onChange={e => {
-							onChange(e, "footer");
+							onChange(!e, "footer");
 						}}
 					/>
 				</div>
